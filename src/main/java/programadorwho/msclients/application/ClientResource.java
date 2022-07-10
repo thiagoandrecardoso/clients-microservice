@@ -1,24 +1,25 @@
 package programadorwho.msclients.application;
 
-import com.ctc.wstx.shaded.msv_core.util.Uri;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import programadorwho.msclients.application.representation.ClientSaveRequest;
-import programadorwho.msclients.domain.Client;
 
 import java.net.URI;
 
 @RestController
 @RequestMapping("clientes")
 @RequiredArgsConstructor
+@Slf4j
 public class ClientResource {
 
     private final ClientService service;
 
     @GetMapping
     public String status(){
+        log.info("Obtendo o status do microservice de clientes");
         return "OK";
     }
 
